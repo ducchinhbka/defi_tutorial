@@ -1,3 +1,5 @@
+const { assert } = require('chai')
+
 const DaiToken = artifacts.require('DaiToken')
 const DappToken = artifacts.require('DappToken')
 const TokenFarm = artifacts.require('TokenFarm')
@@ -32,6 +34,10 @@ contract('TokenFarm', ([owner, investor]) => {
             const name = await daiToken.name()
             assert.equal(name, 'Mock DAI Token')
         })
+        it('has a symbol', async () => {
+            const symbol = await daiToken.symbol()
+            assert.equal(symbol, 'mDAI')
+        })
     })
 
     describe('Dapp deployment', async() => {
@@ -40,6 +46,10 @@ contract('TokenFarm', ([owner, investor]) => {
             
             const name = await dappToken.name()
             assert.equal(name, 'DApp Token')
+        })
+        it('has a symbol', async () => {
+            const symbol = await dppToken.symbol()
+            assert.equal(symbol, 'mDAI')
         })
     })
 
