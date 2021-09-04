@@ -48,8 +48,8 @@ contract('TokenFarm', ([owner, investor]) => {
             assert.equal(name, 'DApp Token')
         })
         it('has a symbol', async () => {
-            const symbol = await dppToken.symbol()
-            assert.equal(symbol, 'mDAI')
+            const symbol = await dappToken.symbol()
+            assert.equal(symbol, 'DAPP')
         })
     })
 
@@ -117,11 +117,6 @@ contract('TokenFarm', ([owner, investor]) => {
 
             result = await tokenFarm.isStaking(investor)
             assert.equal(result.toString(), 'false', 'investor is not staking')
-
-            
-
-
-
 
         })
 
